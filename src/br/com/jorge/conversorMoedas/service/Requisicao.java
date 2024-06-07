@@ -10,7 +10,7 @@ import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConsumoAPI {
+public class Requisicao {
     // Atributos
     private String base_code;
     private String target_code;
@@ -18,7 +18,7 @@ public class ConsumoAPI {
 
     List<Conversor> listaConversor = new ArrayList<>();
 
-    public ConsumoAPI(Conversor conversor){
+    public Requisicao(Conversor conversor){
         this.base_code = conversor.getBase_code();
         this.target_code = conversor.getTarget_code();
         this.amount = conversor.getValor();
@@ -44,7 +44,7 @@ public class ConsumoAPI {
 
         // Resposta
         HttpResponse<String> response = client
-                .send(request, HttpResponse.BodyHandlers.ofString());
+                    .send(request, HttpResponse.BodyHandlers.ofString());
 
         String json = response.body();
 
@@ -53,4 +53,5 @@ public class ConsumoAPI {
         listaConversor.add(conversor);
         return  conversor.toString();
     }
+
 }

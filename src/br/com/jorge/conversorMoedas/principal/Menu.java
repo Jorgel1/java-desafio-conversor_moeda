@@ -1,7 +1,7 @@
 package br.com.jorge.conversorMoedas.principal;
 
-import br.com.jorge.conversorMoedas.service.ConsumoAPI;
 import br.com.jorge.conversorMoedas.service.Conversor;
+import br.com.jorge.conversorMoedas.service.Requisicao;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -65,7 +65,8 @@ public class Menu {
         System.out.println("Digite o valor para ser convertido");
         double valor = this.leitura.nextDouble();
         Conversor conversor = new Conversor(base_code, target_code, valor);
-        ConsumoAPI api = new ConsumoAPI(conversor);
+        Requisicao api = new Requisicao(conversor);
         System.out.println(api.requisicaoApi());
     }
+
 }
