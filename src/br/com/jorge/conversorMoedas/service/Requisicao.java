@@ -32,7 +32,7 @@ public class Requisicao {
     // Método para efetuar a requisição e obter reposta da API
     public String requisicaoApi( )  throws IOException, InterruptedException {
 
-        String APIkey = "362d8f2a182479f2f397c9c3";
+        String APIkey = "5fc072f995ed3ee847c5ee56";
         String endereco = "https://v6.exchangerate-api.com/v6/"
                 + APIkey + "/pair/" + this.base_code +  "/" + this.target_code + "/" + this.amount;
 
